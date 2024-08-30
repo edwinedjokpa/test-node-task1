@@ -4,8 +4,10 @@ const db = require("../../models");
 const axios = require("axios");
 const cors = require("cors");
 
+require("dotenv").config();
+
 const quiz_list_id = "SuMRRB";
-const klaviyo_api_key = "pk_026fc9c97c646a73a053c99ef8d8c9c53d";
+const klaviyo_api_key = process.env.KLAVIYO_API_KEY;
 const corsOptions = {
   origin: ["http://localhost:3001"],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204

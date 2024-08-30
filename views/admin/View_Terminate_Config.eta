@@ -1,0 +1,57 @@
+<% if(it.layout_clean_mode) {%>
+<% layout("../layouts/admin/Clean") %>
+<% } else {%>
+<% layout("../layouts/admin/Main") %>
+<%}%>
+
+
+<%~ includeFile("../partials/admin/Breadcrumb", it)%>
+
+<div class="tab-content mx-4 my-4">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <%~ includeFile("../partials/admin/GlobalResponse.eta", it) %>
+      <div class="card" style='border-bottom:1px solid #ccc;'>
+        <div class="card-body">
+
+          <h4 class="primaryHeading2 text-md-left">
+            Termination Configuration
+          </h4>
+   
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Message</th>
+                <th>Countdown (seconds)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (it.sentConfig && it.sentConfig.id) { %>
+                <tr>
+                  <td><%= it.sentConfig.id %></td>
+                  <td><%= it.sentConfig.message %></td>
+                  <td><%= it.sentConfig.countdown %></td>
+                </tr>
+              <% } else { %>
+                <tr>
+                  <td colspan="3">No configuration found</td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+
+          <div class="button-container text-right">
+            <% if (it.sentConfig && it.sentConfig.id) { %>
+              <a type="button" class="btn btn-primary" href="<%= it._base_url %>/create">Update Configuration</a>
+            <% } else { %>
+                <a type="button" class="btn btn-primary" href="<%= it._base_url %>/create">Create New Configuration</a>
+            <% } %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

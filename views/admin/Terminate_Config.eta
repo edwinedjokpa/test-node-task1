@@ -1,0 +1,42 @@
+<% if(it.layout_clean_mode) {%>
+<% layout("../layouts/admin/Clean") %>
+<% } else {%>
+<% layout("../layouts/admin/Main") %>
+<%}%>
+
+
+<%~ includeFile("../partials/admin/Breadcrumb", it)%>
+
+<div class="tab-content mx-4 my-4">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <%~ includeFile("../partials/admin/GlobalResponse.eta", it) %>
+
+        <div class="card" style='border-bottom:1px solid #ccc;'>
+          <div class="form-container card p-4">
+            <h4 class="primaryHeading2 text-md-left">
+              Create/Update Termination Configuration
+            </h4>
+
+            <form action="/admin/terminate-config" method="POST">
+              <div class="form-group  col-md-5 col-sm-12 mt-5">
+                <label class="control-label" for="message">Termination Message:</label>
+                <input type="text" class="form-control data-input id="message" name="message" value="<%= it.sentConfig.message %>" required>
+              </div>
+
+              <div class="form-group  col-md-5 col-sm-12 ">
+                <label class="control-label" for="countdown">Countdown (seconds):</label>
+                <input type="number" class="form-control data-input id="countdown" name="countdown" value="<%= it.sentConfig.countdown %>" required>
+              </div>
+
+              <div class="form-group pl-3">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>

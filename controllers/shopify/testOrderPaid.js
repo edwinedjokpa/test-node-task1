@@ -99,7 +99,7 @@ module.exports = {
   ],
   number: 39,
   order_number: 1039,
-  order_status_url: "https://localhost:3001/48557752481/orders/494d781f1edc1b0101e520b16f132c65/authenticate?key=8c15f18557e37ab98b7b37b1104a4734",
+  order_status_url: `https://localhost:3001/48557752481/orders/494d781f1edc1b0101e520b16f132c65/authenticate?key=${process.env.SHOPIFY_KEY}`,
   original_total_duties_set: null,
   payment_gateway_names: ["shopify_payments"],
   phone: null,

@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   id: 4884199014561,
   admin_graphql_api_id: "gid://shopify/Order/4884199014561",
@@ -99,7 +101,7 @@ module.exports = {
   ],
   number: 39,
   order_number: 1039,
-  order_status_url: `https://localhost:3001/48557752481/orders/494d781f1edc1b0101e520b16f132c65/authenticate?key=${process.env.SHOPIFY_KEY}`,
+  order_status_url: `https://localhost:3001/48557752481/orders/process.env.SHOPIFY_TOKEN/authenticate?key=${process.env.SHOPIFY_KEY}`,
   original_total_duties_set: null,
   payment_gateway_names: ["shopify_payments"],
   phone: null,
@@ -126,7 +128,7 @@ module.exports = {
   tax_lines: [],
   taxes_included: false,
   test: false,
-  token: "494d781f1edc1b0101e520b16f132c65",
+  token: process.env.SHOPIFY_TOKEN,
   total_discounts: "0.00",
   total_discounts_set: {
     shop_money: {

@@ -1,5 +1,10 @@
 require("dotenv").config();
 
+const CHECKOUT_TOKEN = process.env.SHOPIFY_CHECKOUT_TOKEN
+const CART_TOKEN = process.env.SHOPIFY_CART_TOKEN
+const ORDER_TOKEN = process.env.SHOPIFY_ORDER_TOKEN
+const AUTH_KEY = process.env.SHOPIFY_AUTH_KEY
+
 module.exports = {
   id: 4884199014561,
   admin_graphql_api_id: "gid://shopify/Order/4884199014561",
@@ -8,9 +13,9 @@ module.exports = {
   buyer_accepts_marketing: true,
   cancel_reason: null,
   cancelled_at: null,
-  cart_token: "dfd4153f49214e2625561b11715d8270",
+  cart_token: CART_TOKEN,
   checkout_id: 25960421327009,
-  checkout_token: "c443b8928ff2c45a954ab5d2f080bbe2",
+  checkout_token: CHECKOUT_TOKEN,
   client_details: {
     accept_language: "en-US,en;q=0.9,he-IL;q=0.8,he;q=0.7",
     browser_height: 730,
@@ -101,7 +106,7 @@ module.exports = {
   ],
   number: 39,
   order_number: 1039,
-  order_status_url: `https://localhost:3001/48557752481/orders/process.env.SHOPIFY_TOKEN/authenticate?key=${process.env.SHOPIFY_KEY}`,
+  order_status_url: `https://localhost:3001/48557752481/orders/${SHOPIFY_ORDER_TOKEN}/authenticate?key=${AUTH_KEY}`,
   original_total_duties_set: null,
   payment_gateway_names: ["shopify_payments"],
   phone: null,
